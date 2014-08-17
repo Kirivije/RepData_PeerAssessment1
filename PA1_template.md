@@ -7,7 +7,7 @@ output: html_document
 
 ####Loading and preprocessing the data
 
-Load the ggplot2 package that we are going to use for making graphs.
+Load the plotting2 package that we are going to use for making graphs.
 Load the stringr package for string manipulations.
 
 
@@ -89,7 +89,7 @@ Graph for the time intervals:
 
 
 ```r
-ggplot(data=interval_step, aes(x=interval, y=steps)) + geom_line()
+ggplot(data=interval_step, aes(x=interval, y=steps)) + geom_line() + ggtitle("Average steps over the days for each time interval")
 ```
 
 ![plot of chunk unnamed-chunk-8](figure/unnamed-chunk-8.png) 
@@ -204,7 +204,7 @@ median(daily_step_imputed$steps)
 
 1. Create a new factor variable in the dataset with two levels – “weekday” and “weekend” indicating whether a given date is a weekday or weekend day.
 
-Changing the ```Date``` column to ```R``` date formate using ```as.Date()``` function:
+Changing the ```Date``` column to ```R``` date format using ```as.Date()``` function:
 
 
 
@@ -263,7 +263,7 @@ split_activity <- split(activity_imputed, activity_imputed$week)
 
 
 
-This will calculate mean for each interval for ```Weekend``` and ```Weekday```, seperately. 
+This will calculate mean for each interval for ```Weekend``` and ```Weekday```, separately. 
 
 
 
@@ -288,7 +288,7 @@ weekavg <- do.call(rbind.data.frame, splitweekavg)
 
 
 
-Rownames has been assigned to the ```activity_imputed$week``` column and we need to make the rownames column a seperate column (```weekavg$week_dayas```) as this contains ```Weekend``` and ```Weekday``` categories:
+Rownames has been assigned to the ```activity_imputed$week``` column and we need to make the rownames column a separate column (```weekavg$week_dayas```) as this contains ```Weekend``` and ```Weekday``` categories:
 
 
 ```r
