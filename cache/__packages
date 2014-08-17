@@ -1,0 +1,16 @@
+base
+datasets
+ggplot2
+graphics
+grDevices
+knitr
+lattice
+markdown
+methods
+mgcv
+nlme
+plyr
+reshape2
+stats
+stringr
+utils
